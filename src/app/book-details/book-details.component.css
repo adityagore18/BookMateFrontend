@@ -1,0 +1,12 @@
+@media screen and (max-width: 768px) {
+  .img-box {
+    width: 400px;
+    height: 500px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .img-box {
+    width: 512px;
+    height: 512px;
+  }
+}/*# sourceMappingURL=book-details.component.css.map */
