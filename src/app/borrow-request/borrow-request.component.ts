@@ -14,7 +14,7 @@ export class BorrowRequestComponent {
    constructor(private bookService:BookService,private userService :UserService){
             bookService.getBorrowRequest().subscribe((data)=>{
                 this.myRequests=data;
-                console.log(this.myRequests)
+                // console.log(this.myRequests)
                   for(let i of this.myRequests){
                     bookService.getBookName(i.bookId).subscribe((data)=>{
                       i.bookDetails=data;
@@ -23,7 +23,7 @@ export class BorrowRequestComponent {
                     i.ownerDetails=data
                   })
                  }
-                console.log(this.myRequests)
+                // console.log(this.myRequests)
             })
             
    }

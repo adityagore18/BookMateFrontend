@@ -16,7 +16,7 @@ export class ProfileComponent {
    constructor(private userService:UserService,private fb:FormBuilder  ) {
        userService.getUserDetails().subscribe(data=>{
                this.userDetails=data;
-               console.log(this.userDetails);
+              //  console.log(this.userDetails);
        })
        this.profileForm=fb.group({
         phone:['',Validators.required],
@@ -31,7 +31,7 @@ export class ProfileComponent {
         formData.append('address',this.profileForm.value.address);
         formData.append('profileImage',this.imageFile);
         this.userService.updateProfile(this.userDetails._id,formData).subscribe((data)=>{
-          console.log(data);
+          // console.log(data);
         })
         alert('Data save successfully !!');
         this.profileForm.reset();

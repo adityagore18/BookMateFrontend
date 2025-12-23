@@ -15,7 +15,18 @@ export class UserService {
   updateProfile(id:string,record:any){
     return this.http.put('https://bookmatebackend-2.onrender.com/profile/'+id,record);
   }
+ 
+  acceptRequest(requestId:String){
+    return this.http.put('https://bookmatebackend-2.onrender.com/request/update/'+requestId,{status:'Accepted'});
+  }
+
+  rejectRequest(requestId:String){
+      return this.http.put('https://bookmatebackend-2.onrender.com/request/update/'+requestId,{status:'Rejected'});
+  }
+
 }
+
+
 
 
 

@@ -29,10 +29,10 @@ export class RegisterComponent {
         return;
     }
     if(this.registerForm.valid){
-      console.log(this.registerForm.value);
+      // console.log(this.registerForm.value);
       this.successMsg="Registered Succssfully !! Plz. Continue to Login.."
       this.auth.doRegistration(this.registerForm.value).subscribe((data)=>{
-        console.log(data);
+        // console.log(data);
       })
       this.errorMsg="";
       this.registerForm.reset();

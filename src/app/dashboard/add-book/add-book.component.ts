@@ -61,7 +61,7 @@ export class AddBookComponent {
    onSubmit(){
     alert(this.addBookForm.value.title)
     if(this.addBookForm.valid){
-      console.log(this.addBookForm.value)
+      // console.log(this.addBookForm.value)
        const myForm=new FormData();
        myForm.append('title',this.addBookForm.value.title);
        myForm.append('author',this.addBookForm.value.author);
@@ -76,7 +76,7 @@ export class AddBookComponent {
        try{
          this.bookService.addBook(myForm).subscribe((data)=>{
           alert("Succesfully Your Book Added to youe Book-list ,title: "+myForm.get('title'));
-          console.log(data)
+          // console.log(data)
         })
        }catch(err){
         alert('failed to add');

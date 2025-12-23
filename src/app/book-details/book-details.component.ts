@@ -22,7 +22,7 @@ export class BookDetailsComponent {
   noOfMonth=1;
   res:any=''
   constructor(private activeRoute:ActivatedRoute,private service:BookService,private user:UserService,private location:Location,private router:Router){
-    console.log(activeRoute.snapshot.params)
+    // console.log(activeRoute.snapshot.params)
     this._id=activeRoute.snapshot.params['_id'] ;
     this.bookDetails=service.books.filter(book=>book._id==this._id)
      user.getUserDetails().subscribe(data=>{
@@ -77,7 +77,7 @@ export class BookDetailsComponent {
      this.service.makeRequest(reqObj).subscribe(data=>{
           this.res= data;
         
-        this.router.navigateByUrl('/dashboard/request-success/'+this.res.bookDetails._id)
+        this.router.navigateByUrl('/dashboard/request-success/'+this.res.bookDetails._id+'/Send Successfully ')
           
     })
     

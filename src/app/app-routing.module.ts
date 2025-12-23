@@ -63,7 +63,7 @@ const routes: Routes = [
       path:'my-library',
       component:MyLibraryComponent
     },{
-        path:'request-success/:id',
+        path:'request-success/:id/:msg',
         component:RequestSucessComponent,
       },{
       path: '', redirectTo: 'books', pathMatch: 'full' 

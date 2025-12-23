@@ -18,14 +18,14 @@ export class LoginComponent {
       }
       errorMsg:any='';
       onSubmit(){
-        console.log(this.loginForm.value)
+        // console.log(this.loginForm.value)
         this.auth.doLogin(this.loginForm.value).subscribe((data)=>{
           console.log(Object.keys( data).length);
           if(Object.keys( data).length===1){
               this.errorMsg=data;
           }else{
             this.errorMsg=data;
-          console.log(this.errorMsg.token)
+          // console.log(this.errorMsg.token)
           this.auth.storeToken(this.errorMsg.token);
           this.router.navigateByUrl('/dashboard')
           }

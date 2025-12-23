@@ -1,8 +1,12 @@
 <div class="container justify-content-center">
+      <div class="">
+            <i class="fa-solid fa-arrow-down fa-rotate-90 fa-sm   text-success"  ></i> <span class="text-success mx-2"  (click)="goBack()">Back to Library</span>
+           
+        </div>
       <div class=" border rounded mt-4 p-4" >
           <div class="align-items-center d-flex" style="flex-direction: column;">
             <i class="fa-solid fa-circle-check fa-2xl text-success m-3"></i>
-            <div class="h1 text-center" >Request Send Successfully !
+            <div class="h1 text-center" >Request  {{msg}}!
               <p class="h5 text-secondary">We've notified <span class="text-dark">{{ownerDetails.name}}</span>. You'll get an update once they </p>
               <p class="h5 text-secondary">approve your request.</p>
             </div>

@@ -174,4 +174,8 @@ export class BookService {
      return this.http.get(this.baseUrl2+'/my-requests/'+id);
    } 
    
+
+   editBookStatus(id:String){
+       return this.http.put(this.baseUrl+'/'+id,{status:"Available"})
+   }
 }

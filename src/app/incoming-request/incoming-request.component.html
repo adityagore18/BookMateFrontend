@@ -1,11 +1,53 @@
-<table class="table border table-striped">
-     <thead>
-        <tr>
-        <th>Book</th>
-        <th>Requester</th>
-        <th></th>
-     </tr>
-     </thead>
-     
-</table>
-     
+<div class="container">
+    
+   <div class="h3 mt-1">Incoming request Requests</div>
+    <p class="text-secondary" style="font-size: 12px;" >Manage book borrowing requests from other users.</p>
+   <table class="table border table-striped mt-3">
+      <thead>
+         <tr>
+         <th>Book</th>
+         <th>Requester</th>
+         <th></th>
+         <th></th>
+      </tr>
+      </thead>
+      <tbody>
+         
+            <tr *ngFor="let r of myRequests">
+            <td>
+               <div class="d-flex align-items-center">
+                     <div>
+                           <img [src]="r.bookDetails.coverImagePaths[0]" height="100px">
+                     </div>
+                     <div class="h6 mx-2">{{r.bookDetails.title}}
+                           <p class="text-secondary">{{r.bookDetails.author}}</p>
+                     </div>
+               </div>
+            </td>
+            <td>
+                  <p class="text-secondary">{{r.requesterDetails.name}}</p>
+            </td>
+            <td>
+               <div *ngIf="r.status=='Pending'">
+                  <div class=" btn btn-secondary mx-2" (click)="rejectRequest(r)">Reject</div>
+                  <div class="btn btn-success" (click)="acceptRequest(r)">Accept</div>
+               </div>
+               <div *ngIf="r.status=='Accepted'">
+                   <div class="btn btn-success">Accept</div>
+               </div>
+               <div *ngIf="r.status=='Rejected'">
+                  <div class=" btn btn-danger mx-2">Reject</div>
+                  
+               </div>
+
+            </td>
+            <td>
+                  <p class="text-secondary"  [routerLink]="['/dashboard/request-success',r._id,' Details ']">View Details</p>
+
+            </td>
+          </tr>
+         
+      </tbody>    
+   </table>
+
+</div>
