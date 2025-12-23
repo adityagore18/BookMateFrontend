@@ -26,7 +26,7 @@
                 <p class="text-secondary">{{r.ownerDetails.name}}</p>
             </td>
             <td>
-                <div class="btn btn-warning text-warning">{{r.status}}</div>
+                <div  [ngClass]="r.status=='Pending'?'btn btn-primary':r.status=='Accepted'?'btn btn-success':'btn btn-danger'">{{r.status}}</div>
             </td>
             <td>
                 {{r.requestDate | date:'MMM d,y'}}

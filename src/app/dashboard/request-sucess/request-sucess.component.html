@@ -49,19 +49,35 @@
           </div>
           <div class="m-1 d-flex ">
               <div *ngIf="requestDetails.status=='Pending'"><i class="fa-regular fa-circle-check fa-lg text-success mx-2"></i></div>
-              <div *ngIf="requestDetails.status!='Pending'"><i class="fa-solid fa-circle-check fa-lg text-success mx-2"></i></div>
+              <div *ngIf="requestDetails.status=='Accepted'"><i class="fa-solid fa-circle-check fa-lg text-success mx-2"></i></div>
+              <div *ngIf="requestDetails.status=='Rejected'" ><i class="fa-solid fa-circle-xmark fa-lg text-danger mx-2"></i></div>
               <div class="h6" *ngIf="requestDetails.status=='Pending'">
                 Pendding Approval
                 <p class="text-secondary" style="font-size: 11px;">Wating for lender..</p>
               </div>
-              <div class="h6" *ngIf="requestDetails.status!='Pending'">
-                Pendding Approval
-                <p class="text-secondary" style="font-size: 11px;">Request Accepted</p>
+              <div class="h6" *ngIf="requestDetails.status=='Accepted'">
+                 Request Accepted
+                <p class="text-secondary" style="font-size: 11px;">Wating for next communication..</p>
+              </div>
+              <div class="h6 text-secondary" *ngIf="requestDetails.status=='Rejected'">
+                 Request  Rejected
+                <p class="text-secondary" style="font-size: 11px;"> </p>
               </div>
           </div>
           <div class="m-1 d-flex ">
-              <div><i class="fa-regular fa-circle-check fa-lg text-secondary mx-2"></i></div>
-              <div class="h6 text-secondary">
+              <div *ngIf="requestDetails.status=='Pending'"><i class="fa-regular fa-circle-check fa-lg text-secondary mx-2"></i></div>
+              <div *ngIf="requestDetails.status=='Accepted'"><i class="fa-regular fa-circle-check fa-lg text-success mx-2"></i></div>
+              <div *ngIf="requestDetails.status=='Rejected'"><i class="fa-solid fa-circle-xmark fa-lg text-danger mx-2"></i></div>
+
+              <div *ngIf="requestDetails.status=='Pending'" class="h6 text-secondary">
+                Ready For Pickup
+                <!-- <p class="text-secondary" style="font-size: 11px;">{{requestDetails.requestDate | date:'MMM d,y h:m a'}}</p> -->
+              </div>
+              <div *ngIf="requestDetails.status=='Accepted'" class="h6">
+                Ready For Pickup
+                <!-- <p class="text-secondary" style="font-size: 11px;">{{requestDetails.requestDate | date:'MMM d,y h:m a'}}</p> -->
+              </div>
+              <div *ngIf="requestDetails.status=='Rejected'" class="h6 text-secondary">
                 Ready For Pickup
                 <!-- <p class="text-secondary" style="font-size: 11px;">{{requestDetails.requestDate | date:'MMM d,y h:m a'}}</p> -->
               </div>
